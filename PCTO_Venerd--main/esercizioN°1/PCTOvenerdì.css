@@ -85,7 +85,7 @@ CARDS
 #imgbox:hover > .img > .description{
     display: block;
 }
-#imgBox:hover{  
+#imgBox:active{  
     transform: scale(1.5);
 }
 
@@ -104,28 +104,30 @@ CARDS
     position: absolute; z-index: -1; top: 0; left: 0;
 }
 .bg__pink{
-    background-color: pink;
-    height: 50%; width: 100%;
     position: absolute; z-index: -2; top: 0%; left: 0%;
+    background-color: pink;
+    -webkit-transition: all 0.5s;
+    height: 50%; width: 100%;
 }
 .bg__purple{
     background-color: purple;
     height: 50%; width: 100%;
+    -webkit-transition: all 0.5s;
     position: absolute; z-index: -2;top: 50%; left: 0%;    
 }
 .box:hover > .bg__pink{
-    animation-name: topBall;
-    animation-duration: 0.7s;
-    top: -30%;
-    left: 50%;
+    -webkit-transition: all 0.7s;
+    top: -25%;
+    left: 65%;
     border-radius: 50%;
+    width: 70%;
 } 
 .box:hover > .bg__purple{
-    animation-name: downBall;
-    animation-duration: 0.7s;
+    -webkit-transition: all 0.7s;
     border-radius: 50%;
-    left: -50%;
-    top: 80%;
+    left: -40%;
+    top: 75%;
+    width: 70%;
 }
 /*----------------------------
 Animazioni
@@ -136,29 +138,5 @@ Animazioni
     }
     to{
         height: 100%;
-    }
-}
-@keyframes topBall{
-    from{
-        top: 0%;
-        left: 0%;
-        border-radius: 0%;
-    }
-    to{
-        top: -30%;
-        left: 50%;
-        border-radius: 50%;
-    }
-}
-@keyframes downBall{
-    from{
-        top: 50%;
-        left: 0%;
-        border-radius: 0%;
-    }
-    to{
-        top: 80%;
-        left: -50%;
-        border-radius: 50%;
     }
 }
