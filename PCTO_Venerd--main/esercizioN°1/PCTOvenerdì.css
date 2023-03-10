@@ -53,7 +53,7 @@ CARDS
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 .box.boxColor{
     border: solid 4px black; 
@@ -98,6 +98,35 @@ CARDS
     margin-left: 10%;
 }
 
+.blur{
+    width: 100%; height: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute; z-index: -1; top: 0; left: 0;
+}
+.bg__pink{
+    background-color: pink;
+    height: 50%; width: 100%;
+    position: absolute; z-index: -2; top: 0%; left: 0%;
+}
+.bg__purple{
+    background-color: purple;
+    height: 50%; width: 100%;
+    position: absolute; z-index: -2;top: 50%; left: 0%;    
+}
+.box:hover > .bg__pink{
+    animation-name: topBall;
+    animation-duration: 0.7s;
+    top: -30%;
+    left: 50%;
+    border-radius: 50%;
+} 
+.box:hover > .bg__purple{
+    animation-name: downBall;
+    animation-duration: 0.7s;
+    border-radius: 50%;
+    left: -50%;
+    top: 80%;
+}
 /*----------------------------
 Animazioni
 -----------------------------*/
@@ -107,5 +136,29 @@ Animazioni
     }
     to{
         height: 100%;
+    }
+}
+@keyframes topBall{
+    from{
+        top: 0%;
+        left: 0%;
+        border-radius: 0%;
+    }
+    to{
+        top: -30%;
+        left: 50%;
+        border-radius: 50%;
+    }
+}
+@keyframes downBall{
+    from{
+        top: 50%;
+        left: 0%;
+        border-radius: 0%;
+    }
+    to{
+        top: 80%;
+        left: -50%;
+        border-radius: 50%;
     }
 }
