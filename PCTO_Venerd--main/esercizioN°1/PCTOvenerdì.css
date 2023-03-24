@@ -1,15 +1,22 @@
 body{
     overflow-x: hidden;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+    color: rgb(154, 194, 230);
 }
 a{
     text-decoration: none;
-    color: black;
 }
 
 
 #navbar{
-    width: 100%;
-    height: 30px;
+    width: 100%;height: 75px;
+    background-color: #023047;
+    border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: -10px 5px rgba(48, 48, 48, 0.519);
 }
 nav{
     list-style-type: none;
@@ -50,6 +57,10 @@ CARDS
     position: relative;
 }
 .box{
+    -webkit-transition:  transform 0.7s, box-shadow 0.7s;
+    transform: translateX(0) translateY(0);
+    box-shadow: -10px 10px rgba(34, 34, 34, 0.371);
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -58,8 +69,9 @@ CARDS
 .box.boxColor{
     border: solid 4px black; 
     border-radius: 10px;
+    
 }
-.box > #card{
+.box > #card{color: rgb(40, 40, 40);
     margin-left: 13%;
     margin-top: 0px;
 }
@@ -97,37 +109,42 @@ CARDS
     top: 50%;
     margin-left: 10%;
 }
-
 .blur{
-    width: 100%; height: 100%;
+    width: 102%; height: 102%;
+    border-radius: 10px;
     backdrop-filter: blur(10px);
-    position: absolute; z-index: -1; top: 0; left: 0;
+    position: absolute; z-index: -1; top: -1%; left: -1%;
 }
-.bg__pink{
+.up-circle{
     position: absolute; z-index: -2; top: 0%; left: 0%;
     background-color: pink;
     -webkit-transition: all 0.5s;
     height: 50%; width: 100%;
 }
-.bg__purple{
+.down-circle{
     background-color: purple;
     height: 50%; width: 100%;
     -webkit-transition: all 0.5s;
     position: absolute; z-index: -2;top: 50%; left: 0%;    
 }
-.box:hover > .bg__pink{
+.box:hover >.up-circle{
     -webkit-transition: all 0.7s;
     top: -25%;
     left: 65%;
     border-radius: 50%;
     width: 70%;
 } 
-.box:hover > .bg__purple{
+.box:hover > .down-circle{
     -webkit-transition: all 0.7s;
     border-radius: 50%;
     left: -40%;
     top: 75%;
     width: 70%;
+}
+.box:hover{
+    -webkit-transition: all 0.7s;
+    box-shadow: -20px 20px rgba(34, 34, 34, 0.371);
+    transform: translateX(10px) translateY(-10px);   
 }
 /*----------------------------
 Animazioni
